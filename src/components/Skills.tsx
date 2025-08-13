@@ -218,7 +218,7 @@ const Skills = () => {
                 Continuous Learning Journey
               </h4>
               <p className="text-muted-foreground leading-relaxed">
-                Technology evolves rapidly, and so do I. I'm constantly exploring new frameworks, 
+                Technology evolves rapidly, and so do I. I&#39;m constantly exploring new frameworks, 
                 methodologies, and best practices to stay at the forefront of web development. 
                 My passion for learning drives me to tackle challenging projects and grow 
                 alongside the ever-changing tech landscape.

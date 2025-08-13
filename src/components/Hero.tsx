@@ -41,7 +41,7 @@ const Hero = () => {
           {/* Left Content */}
           <motion.div className="text-center lg:text-left space-y-6" variants={itemVariants}>
             <motion.div variants={itemVariants}>
-              <h2 className="text-lg text-primary font-medium mb-2">Hello, I'm</h2>
+              <h2 className="text-lg text-primary font-medium mb-2">Hello, I&#39;m</h2>
               <h1 className="text-5xl lg:text-7xl font-bold mb-4">
                 <span className="text-gradient">Harrie Kevin Gallo</span>
               </h1>

@@ -74,7 +74,7 @@ const About = () => {
               
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  I'm a dedicated full-stack developer with over 3 years of experience 
+                  I&#39;m a dedicated full-stack developer with over 3 years of experience 
                   crafting digital solutions that bridge the gap between design and functionality. 
                   My journey began with a curiosity for how things work and evolved into a 
                   passion for building applications that make a real impact.
@@ -82,13 +82,13 @@ const About = () => {
                 
                 <p>
                   I thrive in collaborative environments where creativity meets technical 
-                  excellence. Whether it's architecting scalable backend systems or 
+                  excellence. Whether it&#39;s architecting scalable backend systems or 
                   creating intuitive user interfaces, I bring enthusiasm and precision 
                   to every project.
                 </p>
 
                 <p>
-                  When I'm not coding, you'll find me exploring the latest tech trends, 
+                  When I&#39;m not coding, you&#39;ll find me exploring the latest tech trends, 
                   watching podcasts and vlogs, or farming to unwind and reset my mind.
                 </p>
               </div>
@@ -148,7 +148,7 @@ const About = () => {
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.3 }}
               >
-                <h4 className="text-lg font-semibold text-foreground mb-4">When I'm Not Coding</h4>
+                <h4 className="text-lg font-semibold text-foreground mb-4">When I&#39;m Not Coding</h4>
                 <div className="grid grid-cols-2 gap-3">
                   {interests.map((interest, index) => (
                     <motion.div

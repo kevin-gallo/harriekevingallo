@@ -2,14 +2,13 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter, Download, Facebook } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Download, Facebook } from "lucide-react";
 
 const Contacts = () => {
     const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -96,7 +95,7 @@ const Contacts = () => {
               Get In <span className="text-gradient">Touch</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Ready to bring your ideas to life? Let's discuss your next project and 
+              Ready to bring your ideas to life? Let&#39;s discuss your next project and 
               explore how we can work together.
             </p>
           </motion.div>
@@ -106,13 +105,13 @@ const Contacts = () => {
             <motion.div className="space-y-8" variants={itemVariants}>
               <div>
                 <h3 className="text-2xl font-semibold text-foreground mb-6">
-                  Let's Connect
+                  Let&#39;s Connect
                 </h3>
                 <p className="text-muted-foreground leading-relaxed mb-8">
-                  I'm always interested in new opportunities, collaborations, and 
+                  I&#39;m always interested in new opportunities, collaborations, and 
                   challenging projects. Whether you have a question about my work, 
                   want to discuss a potential project, or just want to say hello, 
-                  I'd love to hear from you.
+                  I&#39;d love to hear from you.
                 </p>
               </div>
 
@@ -178,8 +177,8 @@ const Contacts = () => {
                 Ready to Start Your Project?
               </h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                I'm currently available for freelance work and exciting full-time opportunities. 
-                Let's discuss how we can bring your vision to life with cutting-edge technology 
+                I&#39;m currently available for freelance work and exciting full-time opportunities. 
+                Let&#39;s discuss how we can bring your vision to life with cutting-edge technology 
                 and creative solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

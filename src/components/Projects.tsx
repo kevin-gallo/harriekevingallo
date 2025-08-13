@@ -207,7 +207,7 @@ const Projects = () => {
               Featured <span className="text-gradient">Projects</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A showcase of my recent work and the technologies I'm passionate about
+              A showcase of my recent work and the technologies I&#39;m passionate about
             </p>
           </motion.div>
 
