@@ -28,7 +28,6 @@ const Navigation = () => {
     }
 
     const navItems = [
-      { label: "Home", href: "#home" },
       { label: "About", href: "#about" },
       { label: "Skills", href: "#skills" },
       { label: "Experience", href: "#experience" },
@@ -47,11 +46,11 @@ const Navigation = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+      <div className="flex justify-center items-center w-full px-4">
+        <div className="flex items-center justify-between h-16 gap-4 w-full">
           {/* Logo */}
           <motion.a
-            href="#"
+            href="/"
             className="text-xl font-bold text-gradient"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

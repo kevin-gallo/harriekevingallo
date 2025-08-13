@@ -33,6 +33,7 @@ const Experience = () => {
       period: "2024 - Present",
       type: "Full-time",
       description: "Working on a web platform for a Japanese company, focusing on feature development and bug resolution.",
+      companyWebsite: "https://fdc-inc.com/",
       achievements: [
         "Develop and maintain new features for the platform using PHP, SQL, HTML, CSS, JavaScript, Angular, and Vue.js",
         "Resolve technical issues and implement fixes based on support and development tickets",
@@ -40,7 +41,7 @@ const Experience = () => {
         "Collaborate with senior developers and cross-functional teams through daily stand-up meetings and progress reports",
         "Communicate regularly with Japanese senior engineers for reporting and task coordination"
       ],
-      technologies: ["React", "Node.js", "TypeScript", "PostgreSQL", "AWS", "Docker"]
+      technologies: ["HTML", "CSS", "PHP", "SQL", "AngularJS", "jQuery", "VueJS", "CakePHP", "API", "POSTMAN", "Docker"]
     },
     {
       title: "Software Developer",
@@ -49,6 +50,7 @@ const Experience = () => {
       period: "2023",
       type: "Full Time",
       description: "Started my professional journey building websites and learning web development fundamentals.",
+      companyWebsite: "https://korlanda.com/",
       achievements: [
         "Developed custom WordPress themes and plugins for small to medium businesses",
         "Learned modern web development practices including version control and testing",
@@ -64,6 +66,7 @@ const Experience = () => {
       period: "2023",
       type: "Intern",
       description: "Gained hands-on experience in software development through an internship program.",
+      companyWebsite: "https://www.dnamicro.com/",
       achievements: [
         "Participated in real-world software development projects as an intern",
         "Worked with technologies such as React, JavaScript, XState, MongoDB, Tailwind CSS, Axios, and GitLab",
@@ -79,6 +82,7 @@ const Experience = () => {
       period: "2020 - 2023",
       type: "Part Time",
       description: "Started my professional journey building websites and learning web development fundamentals.",
+      companyWebsite: "https://korlanda.com/",
       achievements: [
         "Developed custom WordPress themes and plugins for small to medium businesses",
         "Learned modern web development practices including version control and testing",
@@ -175,9 +179,11 @@ const Experience = () => {
                           {exp.title}
                         </h3>
                         
-                        <div className="flex items-center text-primary font-medium mb-2">
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          {exp.company}
+                        <div>
+                          <a href={`${exp.companyWebsite}`} target="_blank" className="flex items-center text-primary font-medium mb-2">
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            {exp.company}
+                          </a>
                         </div>
                         
                         <div className="flex items-center text-sm text-muted-foreground mb-3">

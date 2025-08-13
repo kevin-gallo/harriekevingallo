@@ -69,8 +69,7 @@ const Skills = () => {
             { name: "Linux", icon: "🐧" },
             { name: "Windows", icon: "🪟" },
             { name: "MacOS", icon: "🍏" },
-            { name: "Apache", icon: "🗃️" },
-            { name: "Redis", icon: "🟥" },
+            { name: "Memcached", icon: "🟦" },
           ],
         },
       ];
