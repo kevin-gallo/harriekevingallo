@@ -128,12 +128,12 @@ const Contacts = () => {
                     transition={{ delay: 0.3 + index * 0.1 }}
                     target={`${info.label === 'Resume' || info.label == 'Location' ? '_blank' : ''}`}
                   >
-                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <div className="w-12 h-12 p-3 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <info.icon className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <p className="font-medium text-foreground">{info.label}</p>
-                      <p className="text-muted-foreground group-hover:text-primary transition-colors">
+                      <p className="text-muted-foreground group-hover:text-primary transition-colors wrap-anywhere">
                         {info.value}
                       </p>
                     </div>

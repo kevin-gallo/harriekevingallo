@@ -18,7 +18,7 @@ import trackFunds from '../../public/trackfunds-img.jpg';
 const Projects = () => {
 
     const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -111,7 +111,7 @@ const Projects = () => {
     },
     {
         title: "Les Chamanes",
-        description: "A company based on France that offers a wide range of products involving jewelries, all inspired by nature.",
+        description: "Les Chamanes is to mainly present a diversified offer and to integrate novelty, initiative, freshness and originality in our creations while taking care of the environment.",
         category: "Frontend",
         imageSrc: lesLogo,
         technologies: ["Wordpress", "HTML", "CSS", "JavaScript", "Bootstrap", "jQuery", "Git", "Gitlab"],
