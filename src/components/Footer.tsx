@@ -30,13 +30,14 @@ const Footer = () => {
           <div className="lg:col-span-5 lg:space-y-2">
             <h2 className="h5 text-primary">Get in touch</h2>
             <p className="display-2">
-              Need a website designed, built, or rescued?
+              Ready for a website that grows your business?
             </p>
           </div>
           <div className="space-y-4 lg:col-span-5 lg:col-start-8 lg:space-y-7 lg:pt-6">
             <p className="body-1">
-              Let&apos;s start a conversation about your next project. No
-              account managers, no hand-offs. Just me, on it.
+              Let&apos;s start a conversation about your next project. One
+              dedicated partner from your first message to launch day, and
+              beyond.
             </p>
             <a
               href="mailto:gallo.harriekevin.official@gmail.com"
@@ -112,8 +113,8 @@ const Footer = () => {
 
           <div className="space-y-5 lg:col-span-5 lg:col-start-8">
             <h3 className="text-[22px] lg:text-[18px]">
-              Available for freelance projects, retainers, and white-label work
-              for agencies.
+              Available for new projects, ongoing partnerships, and
+              white-label work for agencies.
             </h3>
           </div>
         </div>

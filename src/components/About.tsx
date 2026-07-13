@@ -9,17 +9,17 @@ const About = () => {
             <div>
               <h2 className="h5">About me</h2>
               <p className="display-2">
-                One person. The output of a full web team.
+                A partner who treats your business like their own
               </p>
             </div>
             <p className="body-3 text-grey-500">
-              I&apos;m Harrie Kevin Gallo, a full-stack developer and designer
-              based in Cebu, Philippines. For the past 3+ years I&apos;ve been
-              designing, building, and shipping e-commerce sites, web apps, and
-              custom platforms for clients across Europe, Asia, and New
-              Zealand. Working with me is like working with an agency, minus
-              the overhead: one point of contact who takes your project from
-              first sketch to production.
+              I&apos;m Harrie Kevin Gallo, a web designer and developer based
+              in Cebu, Philippines. For the past 3+ years I&apos;ve helped
+              businesses across Europe, Asia, and New Zealand launch websites
+              and online stores that bring in leads, customers, and sales.
+              When you partner with me, you get one dedicated point of contact
+              who takes your project from first idea to launch day, then
+              sticks around to help you grow.
             </p>
           </div>
 

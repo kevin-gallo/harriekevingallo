@@ -89,7 +89,7 @@ const TechMarquee = () => {
       <div className="px-space">
         <div className="grid-layout mx-container">
           <div className="space-y-3 lg:col-span-6">
-            <h2 className="display-2">The tech behind the work</h2>
+            <h2 className="display-2">Trusted tools behind every project</h2>
           </div>
         </div>
       </div>

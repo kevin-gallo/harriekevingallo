@@ -1,5 +1,10 @@
+'use client'
+
 import Image, { type StaticImageData } from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { A11y, Keyboard, Navigation } from "swiper/modules";
+import "swiper/css";
 import ncLogo from "../../public/nc-logo.jpg";
 import natureLogo from "../../public/nature-logo.jpg";
 import fhLogo from "../../public/fh-logo.jpg";
@@ -19,41 +24,41 @@ type Work = {
 const works: Work[] = [
   {
     title: "NativeCamp online English platform",
-    category: "Full-stack development",
+    category: "Online learning platform",
     image: ncLogo,
     url: "https://nativecamp.net/",
     isLogo: true,
   },
   {
     title: "Nature Bijoux e-commerce",
-    category: "E-commerce development",
+    category: "Online store",
     image: natureLogo,
     url: "https://www.nature.fr/en/",
     isLogo: true,
   },
   {
     title: "Franck Herval e-commerce",
-    category: "E-commerce development",
+    category: "Online store",
     image: fhLogo,
     url: "https://www.franckherval.com/",
     isLogo: true,
   },
   {
     title: "Les Chamanes website",
-    category: "Frontend development",
+    category: "Brand website",
     image: lesLogo,
     url: "https://www.leschamanes.com/en/",
     isLogo: true,
   },
   {
     title: "Chitchat platform migration",
-    category: "Laravel development",
+    category: "Platform rebuild",
     image: chitChatImg,
     url: "https://www.chitchatconfessions.com/",
   },
   {
     title: "Trackfunds investment tracker",
-    category: "Product design & build",
+    category: "Design & build",
     image: trackFunds,
   },
 ];
@@ -108,11 +113,11 @@ const Works = () => {
             <div>
               <h2 className="h5">Works</h2>
               <p className="display-2">
-                Projects I&apos;ve designed, built, or rebuilt
+                Projects that help businesses sell, grow, and stand out
               </p>
             </div>
           </div>
-          <div className="flex lg:col-span-5 lg:justify-end">
+          <div className="flex items-center gap-3 lg:col-span-5 lg:justify-end">
             <a
               href="https://github.com/kevin-gallo"
               target="_blank"
@@ -122,14 +127,42 @@ const Works = () => {
               See more on GitHub
               <ArrowUpRight className="size-3.5" />
             </a>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                aria-label="Previous project"
+                className="works-prev border-grey-300 hover:bg-primary flex size-11 items-center justify-center rounded-full border transition-colors duration-300 disabled:pointer-events-none disabled:opacity-30"
+              >
+                <ChevronLeft className="size-5" />
+              </button>
+              <button
+                type="button"
+                aria-label="Next project"
+                className="works-next border-grey-300 hover:bg-primary flex size-11 items-center justify-center rounded-full border transition-colors duration-300 disabled:pointer-events-none disabled:opacity-30"
+              >
+                <ChevronRight className="size-5" />
+              </button>
+            </div>
           </div>
         </div>
 
-        <div className="grid gap-x-5 gap-y-14 md:grid-cols-2">
+        <Swiper
+          modules={[Navigation, A11y, Keyboard]}
+          navigation={{ prevEl: ".works-prev", nextEl: ".works-next" }}
+          keyboard={{ enabled: true }}
+          spaceBetween={20}
+          slidesPerView={1.1}
+          breakpoints={{
+            768: { slidesPerView: 2, spaceBetween: 20 },
+            1280: { slidesPerView: 2.5, spaceBetween: 24 },
+          }}
+        >
           {works.map((work) => (
-            <WorkTile key={work.title} work={work} />
+            <SwiperSlide key={work.title}>
+              <WorkTile work={work} />
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
       </div>
     </section>
   );
