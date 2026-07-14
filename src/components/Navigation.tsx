@@ -1,12 +1,15 @@
 'use client'
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "About me", href: "#about" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Works", href: "#works" },
+  { label: "About me", href: "/#about" },
+  { label: "Solutions", href: "/#solutions" },
+  { label: "Work", href: "/work" },
+  { label: "Tools", href: "/tools" },
+  { label: "Services", href: "/services" },
 ];
 
 const Navigation = () => {
@@ -48,21 +51,21 @@ const Navigation = () => {
       }`}
     >
       <div className="mx-container flex items-center justify-between border-b border-current/40">
-        <a href="#top" className="block py-5" aria-label="Home">
+        <Link href="/" className="block py-5" aria-label="Home">
           <span className="font-headline text-xl font-medium lg:text-2xl">
             Harrie Kevin Gallo
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden lg:block" aria-label="Main navigation">
           <ul className="flex items-center gap-10">
             {navItems.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="group relative py-2 body-3">
+                <Link href={item.href} className="group relative py-2 body-3">
                   {item.label}
                   <i className="absolute bottom-0 left-0 h-px w-0 bg-current transition-all duration-300 ease-out group-hover:w-full"></i>
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -87,6 +90,7 @@ const Navigation = () => {
 
       {/* Mobile nav */}
       <div
+        inert={!isOpen}
         className={`grid overflow-hidden transition-[grid-template-rows] duration-300 lg:hidden ${
           isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
@@ -94,14 +98,14 @@ const Navigation = () => {
         <div className="min-h-0">
           <nav className="flex flex-col gap-1 py-6" aria-label="Mobile navigation">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className="display-3 py-2"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <a
               href="#contact"

@@ -37,22 +37,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Harrie Kevin Gallo" }],
   creator: "Harrie Kevin Gallo",
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     type: "website",
-    url: siteUrl,
     siteName: "Harrie Kevin Gallo",
-    title: "Harrie Kevin Gallo | Web Design & Development Partner",
-    description:
-      "Websites and online stores that turn visitors into leads, customers, and sales. One dedicated partner from first idea to launch and beyond.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harrie Kevin Gallo | Web Design & Development Partner",
-    description:
-      "Websites and online stores that turn visitors into leads, customers, and sales. One dedicated partner from first idea to launch and beyond.",
   },
   robots: {
     index: true,

@@ -1,4 +1,5 @@
-import { Download } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 const About = () => {
   return (
@@ -14,7 +15,7 @@ const About = () => {
             </div>
             <p className="body-3 text-grey-500">
               I&apos;m Harrie Kevin Gallo, a web designer and developer based
-              in Cebu, Philippines. For the past 3+ years I&apos;ve helped
+              in Cebu, Philippines. For the past 5+ years I&apos;ve helped
               businesses across Europe, Asia, and New Zealand launch websites
               and online stores that bring in leads, customers, and sales.
               When you partner with me, you get one dedicated point of contact
@@ -24,15 +25,10 @@ const About = () => {
           </div>
 
           <div className="flex items-end lg:col-span-5 lg:col-start-8 lg:justify-end">
-            <a
-              href="/Harrie Kevin Gallo - Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-black"
-            >
-              Download resume
-              <Download className="size-3.5" />
-            </a>
+            <Link href="/work" className="btn btn-black">
+              See all projects
+              <ArrowUpRight className="size-3.5" />
+            </Link>
           </div>
         </div>
       </div>

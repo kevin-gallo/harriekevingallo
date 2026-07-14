@@ -1,108 +1,12 @@
 'use client'
 
-import Image, { type StaticImageData } from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { A11y, Keyboard, Navigation } from "swiper/modules";
 import "swiper/css";
-import ncLogo from "../../public/nc-logo.jpg";
-import natureLogo from "../../public/nature-logo.jpg";
-import fhLogo from "../../public/fh-logo.jpg";
-import lesLogo from "../../public/lesch-logo.jpg";
-import chitChatImg from "../../public/chitchat-img.jpg";
-import trackFunds from "../../public/trackfunds-img.jpg";
-
-type Work = {
-  title: string;
-  category: string;
-  image: StaticImageData;
-  url?: string;
-  /* logo images render contained on a light backdrop instead of cropped */
-  isLogo?: boolean;
-};
-
-const works: Work[] = [
-  {
-    title: "NativeCamp online English platform",
-    category: "Online learning platform",
-    image: ncLogo,
-    url: "https://nativecamp.net/",
-    isLogo: true,
-  },
-  {
-    title: "Nature Bijoux e-commerce",
-    category: "Online store",
-    image: natureLogo,
-    url: "https://www.nature.fr/en/",
-    isLogo: true,
-  },
-  {
-    title: "Franck Herval e-commerce",
-    category: "Online store",
-    image: fhLogo,
-    url: "https://www.franckherval.com/",
-    isLogo: true,
-  },
-  {
-    title: "Les Chamanes website",
-    category: "Brand website",
-    image: lesLogo,
-    url: "https://www.leschamanes.com/en/",
-    isLogo: true,
-  },
-  {
-    title: "Chitchat platform migration",
-    category: "Platform rebuild",
-    image: chitChatImg,
-    url: "https://www.chitchatconfessions.com/",
-  },
-  {
-    title: "Trackfunds investment tracker",
-    category: "Design & build",
-    image: trackFunds,
-  },
-];
-
-const WorkTile = ({ work }: { work: Work }) => {
-  const content = (
-    <>
-      <div className="bg-grey-200 relative aspect-[4/3] overflow-hidden">
-        <Image
-          src={work.image}
-          alt={work.title}
-          fill
-          sizes="(min-width: 1024px) 45vw, 90vw"
-          className={`transition-transform duration-700 ease-out group-hover:scale-105 ${
-            work.isLogo ? "object-contain p-[15%]" : "object-cover"
-          }`}
-        />
-      </div>
-      <div className="space-y-1 pt-4">
-        <p className="h5 text-grey-500">{work.category}</p>
-        <h3 className="display-3 flex items-start gap-2">
-          {work.title}
-          {work.url && (
-            <ArrowUpRight className="mt-2 size-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-          )}
-        </h3>
-      </div>
-    </>
-  );
-
-  if (work.url) {
-    return (
-      <a
-        href={work.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group block"
-      >
-        {content}
-      </a>
-    );
-  }
-  return <div className="group block">{content}</div>;
-};
+import { works } from "@/data/works";
+import WorkCard from "@/components/WorkCard";
 
 const Works = () => {
   return (
@@ -149,11 +53,18 @@ const Works = () => {
           }}
         >
           {works.map((work) => (
-            <SwiperSlide key={work.title}>
-              <WorkTile work={work} />
+            <SwiperSlide key={work.slug}>
+              <WorkCard work={work} />
             </SwiperSlide>
           ))}
         </Swiper>
+
+        <div className="flex justify-center">
+          <Link href="/work" className="btn btn-black">
+            See all projects
+            <ArrowUpRight className="size-3.5" />
+          </Link>
+        </div>
       </div>
     </section>
   );
