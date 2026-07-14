@@ -50,7 +50,7 @@ const Navigation = () => {
       <div className="mx-container flex items-center justify-between border-b border-current/40">
         <a href="#top" className="block py-5" aria-label="Home">
           <span className="font-headline text-xl font-medium lg:text-2xl">
-            Kevin Gallo
+            Harrie Kevin Gallo
           </span>
         </a>
 
@@ -59,7 +59,7 @@ const Navigation = () => {
           <ul className="flex items-center gap-10">
             {navItems.map((item) => (
               <li key={item.href}>
-                <a href={item.href} className="group relative py-2">
+                <a href={item.href} className="group relative py-2 body-3">
                   {item.label}
                   <i className="absolute bottom-0 left-0 h-px w-0 bg-current transition-all duration-300 ease-out group-hover:w-full"></i>
                 </a>

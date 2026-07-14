@@ -113,20 +113,11 @@ const Works = () => {
             <div>
               <h2 className="h5">Works</h2>
               <p className="display-2">
-                Projects that help businesses sell, grow, and stand out
+                Projects and Businesses that I help sell, grow, and stand out
               </p>
             </div>
           </div>
           <div className="flex items-center gap-3 lg:col-span-5 lg:justify-end">
-            <a
-              href="https://github.com/kevin-gallo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-black"
-            >
-              See more on GitHub
-              <ArrowUpRight className="size-3.5" />
-            </a>
             <div className="flex items-center gap-2">
               <button
                 type="button"

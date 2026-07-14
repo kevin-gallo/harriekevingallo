@@ -88,7 +88,7 @@ const Footer = () => {
                   href="https://maps.app.goo.gl/1CMnKP9mQNoJGkfJ6"
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="View Cebu City on map"
+                  aria-label="View Cebu City Philippines on map"
                   className="body-4 block"
                 >
                   Based in
@@ -126,13 +126,18 @@ const Footer = () => {
             <small>
               &copy; {new Date().getFullYear()} Harrie Kevin Gallo
             </small>
+            <small>
+              Inspired by <a href="https://platocreative.co.nz/" className="hover:underline" target="_blank" rel="noopener noreferrer">
+                Plato
+              </a>
+            </small>
           </div>
           <a
             href="#top"
             className="font-headline text-3xl font-medium lg:text-4xl"
             aria-label="Back to top"
           >
-            Kevin Gallo
+            Harrie Kevin Gallo
           </a>
         </div>
       </div>
