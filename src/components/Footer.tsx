@@ -1,7 +1,15 @@
 'use client'
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Facebook, Mail } from "lucide-react";
+
+const pageLinks = [
+  { label: "About me", href: "/about" },
+  { label: "Work", href: "/work" },
+  { label: "Tools", href: "/tools" },
+  { label: "Services", href: "/services" },
+];
 
 const socials = [
   { icon: Github, href: "https://github.com/kevin-gallo", label: "GitHub" },
@@ -116,6 +124,20 @@ const Footer = () => {
               Available for new projects, ongoing partnerships, and
               white-label work for agencies.
             </h3>
+            <nav aria-label="Footer navigation">
+              <ul className="flex flex-wrap gap-x-6 gap-y-2">
+                {pageLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="body-3 underline-link hover:text-primary transition-colors duration-300"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
         </div>
       </div>

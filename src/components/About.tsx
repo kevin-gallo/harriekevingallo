@@ -14,18 +14,36 @@ const About = () => {
               </p>
             </div>
             <p className="body-3 text-grey-500">
-              I&apos;m Harrie Kevin Gallo, a web designer and developer based
-              in Cebu, Philippines. For the past 5+ years I&apos;ve helped
-              businesses across Europe, Asia, and New Zealand launch websites
-              and online stores that bring in leads, customers, and sales.
-              When you partner with me, you get one dedicated point of contact
-              who takes your project from first idea to launch day, then
-              sticks around to help you grow.
+              I&apos;m Harrie Kevin Gallo, a{" "}
+              <strong className="font-medium text-black">
+                web designer and developer
+              </strong>{" "}
+              based in Cebu, Philippines. I&apos;ve built{" "}
+              <strong className="font-medium text-black">online stores</strong>{" "}
+              for French jewellery brands, shipped features and{" "}
+              <strong className="font-medium text-black">
+                critical fixes
+              </strong>{" "}
+              for one of Asia&apos;s largest online learning platforms, and
+              deliver{" "}
+              <strong className="font-medium text-black">
+                agency-standard work
+              </strong>{" "}
+              for New Zealand businesses. When you partner with me, you get{" "}
+              <strong className="font-medium text-black">
+                one dedicated point of contact
+              </strong>{" "}
+              who takes your project from first idea to launch day, then sticks
+              around to help you grow.
             </p>
           </div>
 
-          <div className="flex items-end lg:col-span-5 lg:col-start-8 lg:justify-end">
-            <Link href="/work" className="btn btn-black">
+          <div className="flex flex-wrap items-end gap-3 lg:col-span-5 lg:col-start-8 lg:justify-end">
+            <Link href="/about" className="btn btn-black">
+              More about me
+              <ArrowUpRight className="size-3.5" />
+            </Link>
+            <Link href="/work" className="btn btn-outline">
               See all projects
               <ArrowUpRight className="size-3.5" />
             </Link>
