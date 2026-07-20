@@ -1,154 +1,124 @@
 'use client'
 
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import { Menu, X, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Menu, X } from "lucide-react";
 
+const navItems = [
+  { label: "About me", href: "/about" },
+  { label: "Solutions", href: "/#solutions" },
+  { label: "Work", href: "/work" },
+  { label: "Tools", href: "/tools" },
+  { label: "Services", href: "/services" },
+];
 
 const Navigation = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [atTop, setAtTop] = useState(true);
 
-    useEffect(() => {
-      const handleScroll = () => {
-          setScrolled(window.scrollY > 50);
-      };
+  useEffect(() => {
+    let lastY = window.scrollY;
 
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    const handleScroll = () => {
+      const y = window.scrollY;
+      setAtTop(y < 50);
 
-    const handleNavClick = (href: string) => {
-      setIsOpen(false);
-      const element = document.querySelector(href);
-      if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
+      if (y > lastY && y > 120) {
+        setHidden(true);
+        setIsOpen(false);
+      } else if (y < lastY) {
+        setHidden(false);
       }
-    }
+      lastY = y;
+    };
 
-    const navItems = [
-      { label: "About", href: "#about" },
-      { label: "Skills", href: "#skills" },
-      { label: "Experience", href: "#experience" },
-      { label: "Projects", href: "#projects" },
-      { label: "Contact", href: "#contact" },
-    ];
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    return (
-    <motion.nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
+  const headerColors = isOpen
+    ? "bg-grey-600 text-white"
+    : atTop
+      ? "bg-transparent text-white"
+      : "bg-off-white text-black";
+
+  return (
+    <header
+      className={`px-space fixed top-0 z-50 w-full transition-[background-color,color,transform] duration-300 ${headerColors} ${
+        hidden ? "-translate-y-full" : "translate-y-0"
       }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className="flex justify-center items-center w-full px-4">
-        <div className="flex items-center justify-between h-16 gap-4 w-full">
-          {/* Logo */}
-          <motion.a
-            href="/"
-            className="text-xl font-bold text-gradient"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
+      <div className="mx-container flex items-center justify-between border-b border-current/40">
+        <Link href="/" className="block py-5" aria-label="Home">
+          <span className="font-headline text-xl font-medium lg:text-2xl">
             Harrie Kevin Gallo
-          </motion.a>
+          </span>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.button
-                key={item.label}
-                onClick={() => handleNavClick(item.href)}
-                className="text-muted-foreground hover:text-primary transition-colors relative group cursor-pointer"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 + index * 0.1 }}
-                whileHover={{ y: -2 }}
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
-              </motion.button>
+        {/* Desktop nav */}
+        <nav className="hidden lg:block" aria-label="Main navigation">
+          <ul className="flex items-center gap-10">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="group relative py-2 body-3">
+                  {item.label}
+                  <i className="absolute bottom-0 left-0 h-px w-0 bg-current transition-all duration-300 ease-out group-hover:w-full"></i>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
+        </nav>
 
-          {/* CTA Button */}
-          <motion.div
-            className="hidden md:block"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8 }}
-          >
-            <Button
-              size="sm"
-              className="bg-primary hover:shadow-glow transition-all duration-300 group"
-            >
-              <Download className="h-4 w-4 mr-2 group-hover:animate-bounce" />
-              <a href="/Harrie Kevin Gallo - Resume.pdf" target="_blank">Resume</a>
-            </Button>
-          </motion.div>
+        <div className="flex items-center gap-4">
+          <a href="#contact" className="btn btn-yellow max-lg:hidden">
+            Get in touch
+          </a>
 
-          {/* Mobile Menu Toggle */}
-          <motion.button
-            className="md:hidden p-2 text-muted-foreground hover:text-primary transition-colors"
+          {/* Mobile menu toggle */}
+          <button
+            className="p-2 lg:hidden"
             onClick={() => setIsOpen(!isOpen)}
-            whileTap={{ scale: 0.9 }}
+            aria-expanded={isOpen}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </motion.button>
+            {isOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
-      <motion.div
-        className={`md:hidden overflow-hidden ${
-          isOpen ? "max-h-96" : "max-h-0"
+      {/* Mobile nav */}
+      <div
+        inert={!isOpen}
+        className={`grid overflow-hidden transition-[grid-template-rows] duration-300 lg:hidden ${
+          isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
-        initial={false}
-        animate={{ 
-          height: isOpen ? "auto" : 0,
-          opacity: isOpen ? 1 : 0 
-        }}
-        transition={{ duration: 0.3 }}
       >
-        <div className="bg-background/95 backdrop-blur-md border-t border-border">
-          <div className="container mx-auto px-4 py-4 space-y-4">
-            {navItems.map((item, index) => (
-              <motion.button
-                key={item.label}
-                onClick={() => handleNavClick(item.href)}
-                className="block w-full text-left text-muted-foreground hover:text-primary transition-colors py-2"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : -20 }}
-                transition={{ delay: isOpen ? index * 0.1 : 0 }}
+        <div className="min-h-0">
+          <nav className="flex flex-col gap-1 py-6" aria-label="Mobile navigation">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="display-3 py-2"
+                onClick={() => setIsOpen(false)}
               >
                 {item.label}
-              </motion.button>
+              </Link>
             ))}
-            
-            <motion.div
-              className="pt-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : 20 }}
-              transition={{ delay: isOpen ? 0.5 : 0 }}
+            <a
+              href="#contact"
+              className="btn btn-yellow mt-5 self-start"
+              onClick={() => setIsOpen(false)}
             >
-              <Button
-                size="sm"
-                className="w-full bg-primary hover:shadow-glow transition-all duration-300"
-              >
-                <Download className="h-4 w-4 mr-2" />
-                Download Resume
-              </Button>
-            </motion.div>
-          </div>
+              Get in touch
+            </a>
+          </nav>
         </div>
-      </motion.div>
-    </motion.nav>
-    )
+      </div>
+    </header>
+  );
 };
 
 export default Navigation;
