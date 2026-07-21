@@ -80,6 +80,12 @@ export default async function WorkDetailPage({ params }: { params: Params }) {
                   <dt className="h5 text-grey-500">Client</dt>
                   <dd>{work.client}</dd>
                 </div>
+                {work.agency && (
+                  <div className="space-y-1">
+                    <dt className="h5 text-grey-500">Agency</dt>
+                    <dd>{work.agency}</dd>
+                  </div>
+                )}
                 <div className="space-y-1">
                   <dt className="h5 text-grey-500">Project type</dt>
                   <dd className="capitalize">{work.type}</dd>
