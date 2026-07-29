@@ -1912,6 +1912,24 @@ export const works: Work[] = [
     image: "/works/ernestobuono.jpg",
     liveUrl: "https://www.ernestobuono.com.au/",
   },
+  {
+    slug: "scouting-report",
+    title: "Scouting Report bar ranking app",
+    category: "Bar ranking app",
+    type: "freelance",
+    client: "Scouting Report",
+    year: "2026",
+    techStack: ["React", "Vite", "Tailwind CSS", "Recharts"],
+    services: ["Web app development", "Web development"],
+    summary:
+      "Community-driven bar ranking app for Los Angeles, where votes decide each spot's place on the leaderboard.",
+    description: [
+      "Scouting Report ranks bars across LA neighbourhoods like Silver Lake, Echo Park, Los Feliz, and Frogtown by community upvotes and downvotes. Every spot holds a live rank out of 665, with a 30-day Spot Score trend and weekly Hottest Risers and Coldest Droppers boards showing which bars are moving.",
+      "I built the app in React with Vite and Tailwind CSS: searchable rankings with neighbourhood and vibe filters, per-bar detail views with Recharts score charts, and voting tied to user accounts.",
+    ],
+    image: "/works/scoutingreport.jpg",
+    liveUrl: "https://scoutingreport.co/",
+  },
 ];
 
 export const getWork = (slug: string) =>
