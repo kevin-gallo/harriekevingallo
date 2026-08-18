@@ -1935,14 +1935,27 @@ export const works: Work[] = [
 export const getWork = (slug: string) =>
   works.find((work) => work.slug === slug);
 
-/* other projects for the "Related work" section, same type first */
+/* other projects for the "Related works" section, ranked by overlap */
 export const getRelatedWorks = (slug: string, limit = 3): Work[] => {
   const current = getWork(slug);
   if (!current) return works.slice(0, limit);
 
-  const others = works.filter((work) => work.slug !== slug);
-  const sameType = others.filter((work) => work.type === current.type);
-  const rest = others.filter((work) => work.type !== current.type);
+  const overlap = (a: string[], b: string[]) =>
+    a.filter((item) => b.includes(item)).length;
 
-  return [...sameType, ...rest].slice(0, limit);
+  return works
+    .filter((work) => work.slug !== slug)
+    .map((work, index) => ({
+      work,
+      score:
+        overlap(work.techStack, current.techStack) * 2 +
+        overlap(work.services, current.services) +
+        (work.type === current.type ? 1 : 0) +
+        (work.client === current.client ? 4 : 0) +
+        (work.agency && work.agency === current.agency ? 1 : 0) -
+        index / works.length,
+    }))
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map((item) => item.work);
 };
