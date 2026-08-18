@@ -1,19 +1,10 @@
-import type { Metadata } from "next";
-import { Libre_Franklin, Source_Serif_4 } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "@/components/SmoothScroll";
 
-const libreFranklin = Libre_Franklin({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-libre-franklin",
-  display: "swap",
-});
-
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  weight: ["500"],
-  variable: "--font-source-serif",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -50,6 +41,11 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  /* Kept in sync with the .dark class by themeInit and ThemeToggle */
+  themeColor: "#101010",
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -70,19 +66,23 @@ const jsonLd = {
   ],
 };
 
+/* Applies the saved (or system) theme before first paint to avoid a flash. */
+const themeInit = `try{var t=localStorage.getItem("theme");var d=t?t==="dark":matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.classList.toggle("dark",d);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",d?"#101010":"#faf7f1")}catch(e){}`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${libreFranklin.variable} ${sourceSerif.variable}`}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="antialiased">
+        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <SmoothScroll>{children}</SmoothScroll>
+        {children}
       </body>
     </html>
   );
