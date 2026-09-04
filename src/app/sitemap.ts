@@ -2,31 +2,46 @@ import type { MetadataRoute } from "next";
 import { works } from "@/data/works";
 import { services } from "@/data/services";
 import { tools } from "@/data/tools";
+import { experience } from "@/data/experience";
 
 const siteUrl = "https://harriekevingallo.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/about", "/work", "/tools", "/services"].map(
-    (route) => ({
-      url: `${siteUrl}${route}`,
-      lastModified: new Date(),
-    })
-  );
+  const staticRoutes = [
+    "",
+    "/lab",
+    "/lab/collections",
+    "/lab/websites",
+    "/lab/services",
+    "/lab/tools",
+    "/lab/experience",
+    "/lab/assets",
+    "/lab/globals",
+  ].map((route) => ({
+    url: `${siteUrl}${route}`,
+  }));
 
   const workRoutes = works.map((work) => ({
-    url: `${siteUrl}/work/${work.slug}`,
-    lastModified: new Date(),
+    url: `${siteUrl}/lab/websites/${work.slug}`,
   }));
 
   const serviceRoutes = services.map((service) => ({
-    url: `${siteUrl}/services/${service.slug}`,
-    lastModified: new Date(),
+    url: `${siteUrl}/lab/services/${service.slug}`,
   }));
 
   const toolRoutes = tools.map((tool) => ({
-    url: `${siteUrl}/tools/${tool.slug}`,
-    lastModified: new Date(),
+    url: `${siteUrl}/lab/tools/${tool.slug}`,
   }));
 
-  return [...staticRoutes, ...workRoutes, ...serviceRoutes, ...toolRoutes];
+  const experienceRoutes = experience.map((item) => ({
+    url: `${siteUrl}/lab/experience/${item.slug}`,
+  }));
+
+  return [
+    ...staticRoutes,
+    ...workRoutes,
+    ...serviceRoutes,
+    ...toolRoutes,
+    ...experienceRoutes,
+  ];
 }

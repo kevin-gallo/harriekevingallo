@@ -1,58 +1,101 @@
 @import "tailwindcss";
 
-@theme static {
-  --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
-  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+@custom-variant dark (&:where(.dark, .dark *));
 
-  --color-primary: #ffb423;
-  --color-secondary: #ffb423;
-  --color-accent: #faf9f6;
+/* ---------------------------------- */
+/* Theme tokens                        */
+/* ---------------------------------- */
 
-  --color-black: #0e1111;
-  --color-true-black: #000000;
-  --color-off-white: #faf9f6;
+:root {
+  color-scheme: light;
 
-  --color-grey-200: #e3e8eb;
-  --color-grey-300: #ced6db;
-  --color-grey-400: #98a3ab;
-  --color-grey-500: #5e6970;
-  --color-grey-600: #353c41;
+  /* Portfolio — light */
+  --surface: #faf7f1;
+  --ink: #1c1917;
+  --mute: #57534e;
+  --faint: #79716b;
+  --line: #e6e0d4;
+  --accent: #9a6700;
+  --accent-bright: #b47800;
 
-  --color-focus: #2b5ccc;
-  --color-error: #e00000;
-
-  --font-sans: var(--font-libre-franklin), "Franklin Gothic Medium", "Arial", sans-serif;
-  --font-headline: var(--font-source-serif), "Georgia", serif;
-
-  --header-height: 100px;
+  /* Control panel (Gals Lab) — light */
+  --cp-bg: #f4f4f5;
+  --cp-surface: #ffffff;
+  --cp-line: #e4e4e7;
+  --cp-ink: #18181b;
+  --cp-mute: #52525c;
+  --cp-faint: #9f9fa9;
+  --cp-sidebar: #fafafa;
+  --cp-hover: #f4f4f5;
+  --cp-active: #e4e4e7;
+  --cp-topbar: #18181b;
+  --cp-topbar-ink: #d4d4d8;
+  --cp-topbar-line: #3f3f46;
+  --cp-primary: #4f46e5;
+  --cp-primary-hover: #4338ca;
+  --cp-link: #2563eb;
+  --cp-green: #22c55e;
 }
 
-/* Fluid type + spacing scale (400px -> 1440px viewports) */
-:root {
-  /* 26px -> 32px */
-  --font-size-h1: clamp(1.625rem, 1.493rem + 0.5634vw, 2rem);
+.dark {
+  color-scheme: dark;
 
-  /* 16px -> 22px */
-  --font-size-p: clamp(1rem, 0.9054rem + 0.4036vw, 1.25rem);
+  /* Portfolio — dark (primary reference palette) */
+  --surface: #101010;
+  --ink: #eeeeee;
+  --mute: #b5b5b5;
+  --faint: #7b7b7b;
+  --line: #2a2a2a;
+  --accent: #ffb423;
+  --accent-bright: #ffc451;
 
-  /* gap: 56px -> 100px */
-  --gap-xl: clamp(3.5rem, 0.3571rem + 4.9107vi, 6.25rem);
+  /* Control panel (Gals Lab) — dark */
+  --cp-bg: #18181b;
+  --cp-surface: #202024;
+  --cp-line: #2e2e33;
+  --cp-ink: #e4e4e7;
+  --cp-mute: #a1a1aa;
+  --cp-faint: #70707b;
+  --cp-sidebar: #1c1c1f;
+  --cp-hover: #26262b;
+  --cp-active: #2e2e33;
+  --cp-topbar: #101012;
+  --cp-topbar-ink: #a1a1aa;
+  --cp-topbar-line: #27272a;
+  --cp-primary: #6366f1;
+  --cp-primary-hover: #4f46e5;
+  --cp-link: #818cf8;
+  --cp-green: #4ade80;
+}
 
-  /* 14px -> 68px */
-  --space-x: clamp(0.875rem, 0.0558rem + 3.4951vw, 4.25rem);
-  /* 60px -> 120px */
-  --space-y: clamp(3.75rem, 2.4296rem + 5.6338vw, 7.5rem);
+@theme inline {
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-mute: var(--mute);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
 
-  /* 9px -> 15px */
-  --space-xs: clamp(0.56rem, 0.47rem + 0.39vw, 0.94rem);
-  /* 12px -> 20px */
-  --space-sm: clamp(0.75rem, 0.5rem + 0.8333vw, 1.25rem);
-  /* 18px -> 30px */
-  --space-md: clamp(1.13rem, 0.94rem + 0.78vw, 1.88rem);
-  /* 24px -> 40px */
-  --space-lg: clamp(1.5rem, 1.26rem + 1.04vw, 2.5rem);
-  /* 36px -> 60px */
-  --space-xl: clamp(2.25rem, 1.89rem + 1.55vw, 3.75rem);
+  --color-cp-bg: var(--cp-bg);
+  --color-cp-surface: var(--cp-surface);
+  --color-cp-line: var(--cp-line);
+  --color-cp-ink: var(--cp-ink);
+  --color-cp-mute: var(--cp-mute);
+  --color-cp-faint: var(--cp-faint);
+  --color-cp-sidebar: var(--cp-sidebar);
+  --color-cp-hover: var(--cp-hover);
+  --color-cp-active: var(--cp-active);
+  --color-cp-topbar: var(--cp-topbar);
+  --color-cp-topbar-ink: var(--cp-topbar-ink);
+  --color-cp-topbar-line: var(--cp-topbar-line);
+  --color-cp-primary: var(--cp-primary);
+  --color-cp-primary-hover: var(--cp-primary-hover);
+  --color-cp-link: var(--cp-link);
+  --color-cp-green: var(--cp-green);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
 }
 
 /* ---------------------------------- */
@@ -60,12 +103,35 @@
 /* ---------------------------------- */
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--surface);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.625;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  ::selection {
+    /* bright amber + near-black holds AAA contrast in both themes */
+    background-color: #ffb423;
+    color: #101010;
+  }
+
   a,
   button,
   [role="button"],
-  input[type="button"],
-  input[type="submit"],
-  input[type="reset"],
   label[for],
   select,
   summary {
@@ -76,368 +142,215 @@
   input:disabled {
     cursor: not-allowed;
   }
-}
 
-/* ---------------------------------- */
-/* Spacing utilities                   */
-/* ---------------------------------- */
-
-@utility pt-space {
-  padding-top: var(--space-y);
-}
-
-@utility pb-space {
-  padding-bottom: var(--space-y);
-}
-
-@utility py-space {
-  padding-top: var(--space-y);
-  padding-bottom: var(--space-y);
-}
-
-@utility pl-space {
-  padding-left: var(--space-x);
-}
-
-@utility pr-space {
-  padding-right: var(--space-x);
-}
-
-@utility px-space {
-  padding-left: var(--space-x);
-  padding-right: var(--space-x);
-}
-
-@utility mt-space {
-  margin-top: var(--space-y);
-}
-
-@utility mb-space {
-  margin-bottom: var(--space-y);
-}
-
-@utility my-space-0-5 {
-  margin-top: calc(var(--space-y) * 0.5);
-  margin-bottom: calc(var(--space-y) * 0.5);
-}
-
-@utility mx-container {
-  margin-inline: auto;
-  max-width: 1920px;
-}
-
-@utility grid-layout {
-  display: grid;
-  gap: var(--space-sm);
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-  }
-}
-
-@utility darken-overlay-35 {
-  position: relative;
-  overflow: hidden;
-
-  &::after {
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    height: 100%;
-    width: 100%;
-    content: "";
-    background-color: rgba(0, 0, 0, 0.35);
-    mix-blend-mode: multiply;
-  }
-}
-
-@utility underline-link {
-  text-decoration-line: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 6px;
-}
-
-/* ---------------------------------- */
-/* Typography                          */
-/* ---------------------------------- */
-
-@layer base {
-  body {
-    font-family: var(--font-sans);
-    background-color: var(--color-off-white);
-    color: var(--color-black);
-    font-size: var(--font-size-p);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  ::selection {
-    background-color: var(--color-primary);
-    color: var(--color-black);
-  }
-
-  .heading {
-    font-family: var(--font-headline);
-    font-weight: 500;
-    text-wrap: pretty;
-  }
-
-  .display-1 {
-    /* 48px -> 60px */
-    font-family: var(--font-headline);
-    font-weight: 500;
-    text-wrap: pretty;
-    font-size: clamp(3rem, 2.7359rem + 1.1268vw, 3.75rem);
-    line-height: 1.3;
-  }
-
-  .display-2 {
-    /* 28px -> 40px */
-    font-family: var(--font-headline);
-    font-weight: 500;
-    text-wrap: pretty;
-    font-size: clamp(1.75rem, 1.4859rem + 1.1268vw, 2.5rem);
-    line-height: 1.3;
-  }
-
-  .display-3 {
-    /* 22px -> 34px */
-    font-family: var(--font-headline);
-    font-weight: 500;
-    text-wrap: pretty;
-    font-size: clamp(1.375rem, 1.1109rem + 1.1268vw, 2.125rem);
-    line-height: 1.3;
-  }
-
-  .h1 {
-    /* 26px -> 32px */
-    font-family: var(--font-headline);
-    font-weight: 500;
-    text-wrap: pretty;
-    font-size: var(--font-size-h1);
-    line-height: 1.2;
-  }
-
-  .h2 {
-    font-family: var(--font-headline);
-    font-weight: 500;
-    text-wrap: pretty;
-    font-size: 24px;
-    line-height: 1.2;
-  }
-
-  .h3 {
-    font-family: var(--font-headline);
-    font-weight: 500;
-    text-wrap: pretty;
-    font-size: 20px;
-    line-height: 1.3;
-  }
-
-  .h4 {
-    font-family: var(--font-headline);
-    font-weight: 500;
-    text-wrap: pretty;
-    font-size: 18px;
-    line-height: 1.2;
-  }
-
-  .h5 {
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 0.7px;
-    text-transform: uppercase;
-  }
-
-  small {
-    font-size: 11px;
-  }
-
-  .body-1,
-  .lead-paragraph {
-    font-size: 20px;
-    line-height: 1.3;
-    text-wrap: pretty;
-  }
-
-  .body-2 {
-    font-size: 20px;
-    text-wrap: pretty;
-  }
-
-  .body-3 {
-    font-size: 14px;
-    text-wrap: pretty;
-  }
-
-  .body-4 {
-    font-size: 18px;
-    font-weight: 300;
-    text-wrap: pretty;
-  }
-
-  .body-6 {
-    font-size: 14px;
-    line-height: 1.3;
-    text-wrap: pretty;
-  }
-
-  .body-7 {
-    font-size: 11px;
-    font-weight: 300;
-    letter-spacing: 0.025em;
-    text-wrap: pretty;
-    text-transform: uppercase;
-  }
-
-  @media (min-width: 1024px) {
-    .h2 {
-      font-size: 28px;
-    }
-    .h3 {
-      font-size: 22px;
-    }
-    .body-1,
-    .lead-paragraph {
-      font-size: 28px;
-    }
-    .body-2 {
-      font-size: 24px;
-    }
-    .body-3 {
-      font-size: 16px;
-    }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
   }
 }
 
 /* ---------------------------------- */
-/* Buttons                             */
+/* Portfolio primitives                */
 /* ---------------------------------- */
 
 @layer components {
-  .btn {
-    font-size: 16px;
+  /* Inline text link — underlined, offset like the reference */
+  .p-link {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--faint);
+    transition: text-decoration-color 150ms ease, color 150ms ease;
+  }
+
+  .p-link:hover {
+    text-decoration-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* Small bordered action button (profile row) */
+  .p-btn {
     display: inline-flex;
-    cursor: pointer;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 0.4rem 0.75rem;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--ink);
+    background-color: transparent;
+    transition: border-color 150ms ease, color 150ms ease,
+      background-color 150ms ease;
+  }
+
+  .p-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}
+
+/* ---------------------------------- */
+/* Control panel primitives (Gals Lab) */
+/* ---------------------------------- */
+
+@layer components {
+  .cp-card {
+    background-color: var(--cp-surface);
+    border: 1px solid var(--cp-line);
+    border-radius: 12px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.04);
+  }
+
+  .cp-btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
+    gap: 0.4rem;
+    height: 2.25rem;
+    padding: 0 0.875rem;
+    border: 1px solid var(--cp-line);
+    border-radius: 8px;
+    background-color: var(--cp-surface);
+    color: var(--cp-ink);
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background-color 150ms ease, border-color 150ms ease;
+  }
+
+  .cp-btn:hover {
+    background-color: var(--cp-hover);
+  }
+
+  .cp-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    height: 2.25rem;
+    padding: 0 1rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: var(--cp-primary);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background-color 150ms ease;
+  }
+
+  .cp-btn-primary:hover {
+    background-color: var(--cp-primary-hover);
+  }
+
+  .cp-input {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--cp-line);
+    border-radius: 8px;
+    background-color: var(--cp-surface);
+    color: var(--cp-ink);
+    font-size: 14px;
+    padding: 0.5rem 0.75rem;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.03) inset;
+  }
+
+  .cp-input::placeholder {
+    color: var(--cp-faint);
+  }
+
+  .cp-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--cp-ink);
+  }
+
+  .cp-label .req {
+    color: #ef4444;
+  }
+
+  /* Tag / topic row, full-width like Statamic relationship items */
+  .cp-item-row {
+    display: flex;
+    align-items: center;
     gap: 0.5rem;
-    border-radius: 2px;
-    padding: 0.875rem 1.125rem;
-    line-height: 1;
-    color: currentColor;
-    transition-property: color, background-color, border-color;
-    transition-duration: 300ms;
-
-    &:focus-visible {
-      outline: none;
-      box-shadow: 0 0 0 1px var(--color-black);
-    }
+    border: 1px solid var(--cp-line);
+    border-radius: 8px;
+    background-color: var(--cp-surface);
+    padding: 0.5rem 0.625rem;
+    font-size: 13px;
+    color: var(--cp-ink);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0.03);
   }
 
-  .btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-black);
-
-    &:hover {
-      background-color: #fff;
-      color: var(--color-black);
-    }
+  .cp-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    border: 1px solid var(--cp-line);
+    border-radius: 6px;
+    background-color: var(--cp-surface);
+    padding: 0.2rem 0.5rem;
+    font-size: 12px;
+    color: var(--cp-mute);
   }
 
-  .btn-yellow {
-    background-color: var(--color-primary);
-    color: var(--color-black);
-
-    &:hover {
-      background-color: var(--color-black);
-      color: #fff;
-    }
+  .cp-table {
+    width: 100%;
+    font-size: 13px;
+    border-collapse: collapse;
   }
 
-  .btn-outline {
-    border: 1px solid currentColor;
+  .cp-table th {
+    text-align: left;
+    font-weight: 600;
+    color: var(--cp-mute);
+    padding: 0.625rem 1rem;
+    border-bottom: 1px solid var(--cp-line);
+    white-space: nowrap;
   }
 
-  .btn-white {
-    background-color: #fff;
-    color: var(--color-black);
-
-    &:hover {
-      background-color: var(--color-primary);
-      color: #fff;
-    }
+  .cp-table td {
+    padding: 0.7rem 1rem;
+    border-bottom: 1px solid var(--cp-line);
+    color: var(--cp-mute);
+    vertical-align: middle;
   }
 
-  .btn-black {
-    background-color: var(--color-black);
-    color: #fff;
-
-    &:hover {
-      background-color: #fff;
-      color: var(--color-black);
-    }
+  .cp-table tbody tr:last-child td {
+    border-bottom: none;
   }
 
-  .banner-hero-section {
-    height: calc(100dvh - 10dvh);
-    position: relative;
-    overflow: hidden;
-    background-color: var(--color-black);
-
-    @media (min-width: 768px) {
-      height: 640px;
-      min-height: 640px;
-    }
-
-    @media (min-width: 1280px) {
-      height: 100dvh;
-    }
+  .cp-table tbody tr:hover td {
+    background-color: var(--cp-hover);
   }
-}
 
-/* ---------------------------------- */
-/* Marquee                             */
-/* ---------------------------------- */
-
-@keyframes marquee-scroll {
-  from {
-    transform: translateX(0);
+  .cp-side-item {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    width: 100%;
+    border-radius: 8px;
+    padding: 0.4rem 0.625rem;
+    font-size: 13.5px;
+    color: var(--cp-mute);
+    transition: background-color 120ms ease, color 120ms ease;
   }
-  to {
-    transform: translateX(-50%);
+
+  .cp-side-item:hover {
+    background-color: var(--cp-hover);
+    color: var(--cp-ink);
   }
-}
 
-.marquee-wrapper {
-  overflow: hidden;
-  position: relative;
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  will-change: transform;
-  animation: marquee-scroll 40s linear infinite;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none;
-  }
-}
-
-/* ---------------------------------- */
-/* Misc                                */
-/* ---------------------------------- */
-
-html {
-  scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  .cp-side-item[data-active="true"] {
+    background-color: var(--cp-active);
+    color: var(--cp-ink);
+    font-weight: 500;
   }
 }

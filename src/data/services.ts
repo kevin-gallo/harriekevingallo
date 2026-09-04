@@ -74,17 +74,17 @@ export const services: Service[] = [
   },
   {
     slug: "mobile-friendly-design",
-    name: "Mobile-friendly design",
+    name: "Mobile-friendly builds",
     tagline: "A site that works beautifully in every hand.",
     summary:
-      "Designs that look great and work properly on phones, tablets, and desktops.",
+      "Pages that look great and work properly on phones, tablets, and desktops.",
     description: [
-      "Most of your visitors are on a phone. If your site is fiddly on a small screen, they leave, and they rarely come back. I design and build mobile-first, so the phone experience gets the most care.",
+      "Most of your visitors are on a phone. If your site is fiddly on a small screen, they leave, and they rarely come back. I build mobile-first, so the phone experience gets the most care.",
       "That means text you can read without zooming, buttons big enough to tap, forms that are quick to fill in, and menus that make sense with a thumb. From there the design scales up gracefully to tablets and desktops.",
       "I test on real devices as well as browser tools, so what ships matches what your customers actually see.",
     ],
     includes: [
-      "Mobile-first design and build",
+      "Mobile-first build",
       "Touch-friendly navigation and forms",
       "Responsive images for every screen",
       "Fast loading on mobile networks",
@@ -137,7 +137,7 @@ export const services: Service[] = [
     name: "E-commerce development",
     tagline: "A store built to sell, from first visit to checkout.",
     summary:
-      "Online stores designed and built to turn browsers into buyers.",
+      "Online stores built to turn browsers into buyers.",
     description: [
       "An online store has one job: make buying easy. I build stores where products are simple to find, pages load fast, and the checkout takes as few taps as possible.",
       "I have built and maintained stores for brands selling across Europe and Asia, on platforms from Shopify to fully custom builds. That experience shows in the details: product pages that answer questions before they are asked, promotions that are simple to run, and inventory that stays accurate.",
@@ -170,6 +170,66 @@ export const services: Service[] = [
       "XML sitemaps and clean URLs",
       "Redirect mapping for rebuilds",
       "Search Console setup and reporting",
+    ],
+  },
+  {
+    slug: "automation-ai-workflows",
+    name: "Automation & AI workflows",
+    tagline: "Hours of busywork, handled while you sleep.",
+    summary:
+      "Practical automations and AI-powered internal tools that save your team hours every week.",
+    description: [
+      "Every business has work that eats hours without needing human judgement: copying data between tools, drafting the same documents, chasing the same reports. That is exactly the work I automate.",
+      "I build automations and internal tools powered by AI where it genuinely helps: document drafting, content pipelines, data entry, reporting, and the glue between the systems you already use. At Plato I build AI tooling that speeds up real agency workflows, so I know what holds up in daily use and what is just a demo.",
+      "We start small: one workflow, measured time savings, then expand to the next. You always know what was automated and how to switch it off.",
+    ],
+    includes: [
+      "Workflow audit with clear priorities",
+      "AI-assisted document and content pipelines",
+      "Internal tools your team actually uses",
+      "Connections between your existing systems",
+      "Human review steps where they matter",
+      "Training and simple documentation",
+    ],
+  },
+  {
+    slug: "ai-first-development",
+    name: "AI-first development",
+    tagline: "Agentic coding that ships faster without cutting corners.",
+    summary:
+      "AI-assisted, agentic development workflows that deliver projects in days instead of weeks.",
+    description: [
+      "I work AI-first: agentic coding tools like Claude and Cursor are part of my daily stack, planning, writing, and reviewing code alongside me. Used well, they cut delivery time dramatically without touching quality.",
+      "Every AI-assisted change still goes through the same gates as hand-written code: review, testing, and QA on real devices. The speed comes from automating the mechanical parts of development, not from skipping the careful ones.",
+      "For you this means faster quotes and turnarounds, cheaper prototypes, and a developer who can take on unfamiliar platforms with confidence.",
+    ],
+    includes: [
+      "Agentic coding with Claude and Cursor",
+      "Prototypes and MVPs in days",
+      "AI-accelerated site builds and migrations",
+      "Code review and QA on every change",
+      "Legacy codebase exploration and fixes",
+      "AI tooling setup for your own team",
+    ],
+  },
+  {
+    slug: "api-integration",
+    name: "API & third-party integrations",
+    tagline: "Your website, talking to every tool you run.",
+    summary:
+      "Clean integrations with payment, CRM, shipping, booking, and content APIs.",
+    description: [
+      "A website rarely works alone. Orders flow to fulfilment, enquiries land in a CRM, bookings sync to calendars, and content comes from a headless CMS. I build those connections so data moves by itself, reliably.",
+      "I have integrated payment gateways, storefront APIs, headless CMS platforms, and internal systems across REST and GraphQL, with proper error handling, retries, and logging, so a hiccup in one tool never silently loses a customer.",
+      "If a tool you rely on has an API, I can connect your website to it, and leave you documentation that makes the integration easy to live with.",
+    ],
+    includes: [
+      "Payment gateway integration",
+      "CRM and email marketing connections",
+      "Shipping, inventory, and booking APIs",
+      "Headless CMS and storefront APIs",
+      "Webhooks with retries and logging",
+      "Clear documentation and handover",
     ],
   },
   {

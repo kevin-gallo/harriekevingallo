@@ -1,19 +1,10 @@
-import type { Metadata } from "next";
-import { Libre_Franklin, Source_Serif_4 } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "@/components/SmoothScroll";
 
-const libreFranklin = Libre_Franklin({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-libre-franklin",
-  display: "swap",
-});
-
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  weight: ["500"],
-  variable: "--font-source-serif",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -21,18 +12,17 @@ const siteUrl = "https://harriekevingallo.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Harrie Kevin Gallo | Web Design & Development Partner",
+  title: "Harrie Kevin Gallo | Full Stack Developer",
   description:
-    "Your web design and development partner. I design and build websites and online stores that turn visitors into leads, customers, and sales for your business.",
+    "Your full stack development partner. I build websites and online stores that turn visitors into leads, customers, and sales for your business.",
   keywords: [
-    "web design partner",
+    "full stack developer",
+    "full stack web developer",
     "web development partner",
-    "website designer",
-    "website developer",
     "online store development",
     "e-commerce website",
     "business website",
-    "Cebu web developer",
+    "Cebu full stack developer",
     "Harrie Kevin Gallo",
   ],
   authors: [{ name: "Harrie Kevin Gallo" }],
@@ -50,11 +40,16 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  /* Kept in sync with the .dark class by themeInit and ThemeToggle */
+  themeColor: "#faf7f1",
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Harrie Kevin Gallo",
-  jobTitle: "Web Design & Development Partner",
+  jobTitle: "Full Stack Developer",
   url: siteUrl,
   email: "mailto:gallo.harriekevin.official@gmail.com",
   telephone: "+63 994 583 3976",
@@ -70,19 +65,23 @@ const jsonLd = {
   ],
 };
 
+/* Applies the saved theme before first paint to avoid a flash. Defaults to light. */
+const themeInit = `try{var d=localStorage.getItem("theme")==="dark";document.documentElement.classList.toggle("dark",d);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",d?"#101010":"#faf7f1")}catch(e){}`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${libreFranklin.variable} ${sourceSerif.variable}`}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body className="antialiased">
+        <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <SmoothScroll>{children}</SmoothScroll>
+        {children}
       </body>
     </html>
   );
