@@ -74,17 +74,17 @@ export const services: Service[] = [
   },
   {
     slug: "mobile-friendly-design",
-    name: "Mobile-friendly design",
+    name: "Mobile-friendly builds",
     tagline: "A site that works beautifully in every hand.",
     summary:
-      "Designs that look great and work properly on phones, tablets, and desktops.",
+      "Pages that look great and work properly on phones, tablets, and desktops.",
     description: [
-      "Most of your visitors are on a phone. If your site is fiddly on a small screen, they leave, and they rarely come back. I design and build mobile-first, so the phone experience gets the most care.",
+      "Most of your visitors are on a phone. If your site is fiddly on a small screen, they leave, and they rarely come back. I build mobile-first, so the phone experience gets the most care.",
       "That means text you can read without zooming, buttons big enough to tap, forms that are quick to fill in, and menus that make sense with a thumb. From there the design scales up gracefully to tablets and desktops.",
       "I test on real devices as well as browser tools, so what ships matches what your customers actually see.",
     ],
     includes: [
-      "Mobile-first design and build",
+      "Mobile-first build",
       "Touch-friendly navigation and forms",
       "Responsive images for every screen",
       "Fast loading on mobile networks",
@@ -137,7 +137,7 @@ export const services: Service[] = [
     name: "E-commerce development",
     tagline: "A store built to sell, from first visit to checkout.",
     summary:
-      "Online stores designed and built to turn browsers into buyers.",
+      "Online stores built to turn browsers into buyers.",
     description: [
       "An online store has one job: make buying easy. I build stores where products are simple to find, pages load fast, and the checkout takes as few taps as possible.",
       "I have built and maintained stores for brands selling across Europe and Asia, on platforms from Shopify to fully custom builds. That experience shows in the details: product pages that answer questions before they are asked, promotions that are simple to run, and inventory that stays accurate.",

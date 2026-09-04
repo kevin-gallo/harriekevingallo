@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: "Harrie Kevin Gallo",
-    title: "Harrie Kevin Gallo | Web Design & Development Partner",
+    title: "Harrie Kevin Gallo | Full Stack Developer",
     description:
       "Websites and online stores that turn visitors into leads, customers, and sales. One dedicated partner from first idea to launch and beyond.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harrie Kevin Gallo | Web Design & Development Partner",
+    title: "Harrie Kevin Gallo | Full Stack Developer",
     description:
       "Websites and online stores that turn visitors into leads, customers, and sales. One dedicated partner from first idea to launch and beyond.",
   },
@@ -141,7 +141,7 @@ export default function Home() {
       {/* Intro */}
       <div className="mt-10 space-y-5 text-mute">
         <p>
-          I&apos;m a <strong className="font-medium text-ink">web designer and developer</strong>{" "}
+          I&apos;m a <strong className="font-medium text-ink">full stack developer</strong>{" "}
           based in Cebu, Philippines, working with clients across Europe, Asia,
           and New Zealand. When you partner with me you get{" "}
           <strong className="font-medium text-ink">one dedicated point of contact</strong>{" "}
@@ -186,7 +186,7 @@ export default function Home() {
       <Section
         id="services"
         title="How I can help"
-        lead="Design, build, and care for websites and online stores that earn their keep. Every service is scoped around a business outcome."
+        lead="Build and care for websites and online stores that earn their keep. Every service is scoped around a business outcome."
       >
         <dl className="space-y-4">
           {services.map((service) => (

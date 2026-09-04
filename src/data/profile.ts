@@ -5,8 +5,8 @@ export type Social = {
 
 export const profile = {
   name: "Harrie Kevin Gallo",
-  title: "Web designer & developer",
-  jobTitle: "Web Design & Development Partner",
+  title: "Full stack developer",
+  jobTitle: "Full Stack Development Partner",
   location: "Cebu City, Philippines",
   email: "gallo.harriekevin.official@gmail.com",
   phone: "+63 994 583 3976",

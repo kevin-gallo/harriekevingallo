@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Harrie Kevin Gallo — Web Design & Development Partner";
+  "Harrie Kevin Gallo — Full Stack Developer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -46,7 +46,7 @@ export default function OpengraphImage() {
             Harrie Kevin Gallo
           </div>
           <div style={{ fontSize: 36, color: "#b5b5b5" }}>
-            Web designer &amp; developer — websites and online stores that turn
+            Full stack developer — websites and online stores that turn
             visitors into customers.
           </div>
         </div>
