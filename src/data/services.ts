@@ -13,6 +13,66 @@ export type Service = {
 
 export const services: Service[] = [
   {
+    slug: "ai-first-development",
+    name: "AI-native development",
+    tagline: "Agentic coding that ships faster, with review on every change.",
+    summary:
+      "AI-native, agentic development with Claude Code and Cursor that takes websites and web apps from brief to launch in days.",
+    description: [
+      "I work AI-native. Agentic coding tools like Claude Code, Cursor, and GitHub Copilot plan, write, and review code alongside me every day, and I orchestrate them across real projects: new builds, migrations, and fixes in legacy codebases.",
+      "Every AI-assisted change goes through the same gates as hand-written code: code review, testing, and QA on real devices. Agents handle the mechanical parts of development, and I keep the judgement calls.",
+      "For you this means faster quotes and turnarounds, cheaper prototypes, and a developer who can take on unfamiliar platforms with confidence.",
+    ],
+    includes: [
+      "Agentic coding with Claude Code and Cursor",
+      "Prototypes and MVPs in days",
+      "AI-accelerated site builds and migrations",
+      "Code review and QA on every change",
+      "Legacy codebase exploration and fixes",
+      "AI tooling setup for your own team",
+    ],
+  },
+  {
+    slug: "agentic-ai-mcp-integrations",
+    name: "Agentic AI & MCP integrations",
+    tagline: "AI agents that work inside the tools your team already uses.",
+    summary:
+      "Model Context Protocol (MCP) integrations and agent skills that connect AI agents like Claude to your CMS and workflows, with guardrails.",
+    description: [
+      "AI agents become useful once they can see and act on your real systems. I connect agents like Claude to your CMS and tools through the Model Context Protocol (MCP), so your team can ask for a content update, an audit, or a migration and watch it happen.",
+      "At Plato I built production-hardened MCP setups for Craft CMS, plus Storyblok and Statamic workspaces that let non-technical editors manage content through Claude. I also write Claude Code agent skills that turn recurring jobs, like maintenance passes and prototype conversions, into repeatable workflows your team can review.",
+      "Every setup ships with guardrails: production-safe defaults, a confirmation at each decision point, and every change surfaced for review before it lands. Your team gets the speed of AI orchestration and keeps control of production.",
+    ],
+    includes: [
+      "MCP setup for Craft CMS, Storyblok, and Statamic",
+      "Claude Code agent skills for recurring team workflows",
+      "AI content workspaces for non-technical editors",
+      "CLAUDE.md context files that brief agents on your project",
+      "Human-in-the-loop guardrails and review steps",
+      "Training and documentation for your team",
+    ],
+  },
+  {
+    slug: "automation-ai-workflows",
+    name: "AI-powered workflows & automation",
+    tagline: "Hours of busywork, handled while you sleep.",
+    summary:
+      "AI-powered workflows, agents, and internal tools that save your team hours every week.",
+    description: [
+      "Every business has work that eats hours without needing human judgement: copying data between tools, drafting the same documents, chasing the same reports. That is exactly the work I automate.",
+      "I build AI-powered workflows and internal tools where AI earns its place: document drafting, content pipelines, data entry, reporting, and the glue between the systems you already use. At Plato I build AI tooling that speeds up real agency workflows, so I know what holds up in daily use and what is just a demo.",
+      "We start small: one workflow, measured time savings, then expand to the next. You always know what was automated and how to switch it off.",
+    ],
+    includes: [
+      "Workflow audit with clear priorities",
+      "AI-assisted document and content pipelines",
+      "Internal tools your team actually uses",
+      "Connections between your existing systems",
+      "Human review steps where they matter",
+      "Training and simple documentation",
+    ],
+  },
+  {
     slug: "page-speed-optimization",
     name: "Page speed optimization",
     tagline: "Faster pages, happier visitors, more sales.",
@@ -170,46 +230,6 @@ export const services: Service[] = [
       "XML sitemaps and clean URLs",
       "Redirect mapping for rebuilds",
       "Search Console setup and reporting",
-    ],
-  },
-  {
-    slug: "automation-ai-workflows",
-    name: "Automation & AI workflows",
-    tagline: "Hours of busywork, handled while you sleep.",
-    summary:
-      "Practical automations and AI-powered internal tools that save your team hours every week.",
-    description: [
-      "Every business has work that eats hours without needing human judgement: copying data between tools, drafting the same documents, chasing the same reports. That is exactly the work I automate.",
-      "I build automations and internal tools powered by AI where it genuinely helps: document drafting, content pipelines, data entry, reporting, and the glue between the systems you already use. At Plato I build AI tooling that speeds up real agency workflows, so I know what holds up in daily use and what is just a demo.",
-      "We start small: one workflow, measured time savings, then expand to the next. You always know what was automated and how to switch it off.",
-    ],
-    includes: [
-      "Workflow audit with clear priorities",
-      "AI-assisted document and content pipelines",
-      "Internal tools your team actually uses",
-      "Connections between your existing systems",
-      "Human review steps where they matter",
-      "Training and simple documentation",
-    ],
-  },
-  {
-    slug: "ai-first-development",
-    name: "AI-first development",
-    tagline: "Agentic coding that ships faster without cutting corners.",
-    summary:
-      "AI-assisted, agentic development workflows that deliver projects in days instead of weeks.",
-    description: [
-      "I work AI-first: agentic coding tools like Claude and Cursor are part of my daily stack, planning, writing, and reviewing code alongside me. Used well, they cut delivery time dramatically without touching quality.",
-      "Every AI-assisted change still goes through the same gates as hand-written code: review, testing, and QA on real devices. The speed comes from automating the mechanical parts of development, not from skipping the careful ones.",
-      "For you this means faster quotes and turnarounds, cheaper prototypes, and a developer who can take on unfamiliar platforms with confidence.",
-    ],
-    includes: [
-      "Agentic coding with Claude and Cursor",
-      "Prototypes and MVPs in days",
-      "AI-accelerated site builds and migrations",
-      "Code review and QA on every change",
-      "Legacy codebase exploration and fixes",
-      "AI tooling setup for your own team",
     ],
   },
   {

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     default: "Gals Lab | Harrie Kevin Gallo",
   },
   description:
-    "A Statamic-style control panel showcasing every project, service, and tool behind Harrie Kevin Gallo's work.",
+    "A Statamic-style control panel showcasing every project, service, and AI tool behind Harrie Kevin Gallo's work as an AI-native full-stack engineer.",
 };
 
 /* Slim search index built on the server so the client bundle stays light. */

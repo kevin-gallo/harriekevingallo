@@ -5,8 +5,8 @@ export type Social = {
 
 export const profile = {
   name: "Harrie Kevin Gallo",
-  title: "Full stack developer",
-  jobTitle: "Full Stack Development Partner",
+  title: "AI-native full-stack engineer",
+  jobTitle: "AI Engineer & AI-Native Full-Stack Engineer",
   location: "Cebu City, Philippines",
   email: "gallo.harriekevin.official@gmail.com",
   phone: "+63 994 583 3976",
@@ -29,9 +29,12 @@ export const profile = {
     { label: "Based in", value: "Cebu City, Philippines" },
     {
       label: "Working with",
-      value: "Clients across Europe, Asia, and New Zealand",
+      value: "Clients across Europe, Asia, New Zealand, and the United States",
     },
-    { label: "Focus", value: "Websites, online stores, and ongoing care" },
+    {
+      label: "Focus",
+      value: "AI-native builds, agentic AI workflows, and ongoing care",
+    },
     {
       label: "Available for",
       value: "New projects, retainers, and white-label agency work",

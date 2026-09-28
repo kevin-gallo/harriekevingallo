@@ -5,7 +5,7 @@ import { tools } from "@/data/tools";
 export const metadata: Metadata = {
   title: "Tools",
   description:
-    "The platforms, languages, and infrastructure behind every project Harrie Kevin Gallo ships.",
+    "The AI tools, platforms, languages, and infrastructure behind every project Harrie Kevin Gallo ships.",
 };
 
 export default function ToolsPage() {
