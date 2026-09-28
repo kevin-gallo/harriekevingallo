@@ -18,15 +18,15 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: "Harrie Kevin Gallo",
-    title: "Harrie Kevin Gallo | Full Stack Developer",
+    title: "Harrie Kevin Gallo | AI Engineer & AI-Native Full-Stack Engineer",
     description:
-      "Websites and online stores that turn visitors into leads, customers, and sales. One dedicated partner from first idea to launch and beyond.",
+      "Websites, web apps, and AI-powered workflows built with agentic AI. One dedicated partner from first idea to launch and beyond.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Harrie Kevin Gallo | Full Stack Developer",
+    title: "Harrie Kevin Gallo | AI Engineer & AI-Native Full-Stack Engineer",
     description:
-      "Websites and online stores that turn visitors into leads, customers, and sales. One dedicated partner from first idea to launch and beyond.",
+      "Websites, web apps, and AI-powered workflows built with agentic AI. One dedicated partner from first idea to launch and beyond.",
   },
 };
 
@@ -39,7 +39,7 @@ const stackGroups: { label: string; categories: string[] }[] = [
   { label: "CMS", categories: ["CMS"] },
   { label: "E-commerce", categories: ["E-commerce platform"] },
   { label: "Data & APIs", categories: ["Database", "API"] },
-  { label: "AI & automation", categories: ["AI"] },
+  { label: "AI & agentic tools", categories: ["AI"] },
   {
     label: "DevOps & hosting",
     categories: ["DevOps", "Hosting", "Infrastructure"],
@@ -141,9 +141,12 @@ export default function Home() {
       {/* Intro */}
       <div className="mt-10 space-y-5 text-mute">
         <p>
-          I&apos;m a <strong className="font-medium text-ink">full stack developer</strong>{" "}
+          I&apos;m an{" "}
+          <strong className="font-medium text-ink">
+            AI-native full-stack engineer
+          </strong>{" "}
           based in Cebu, Philippines, working with clients across Europe, Asia,
-          and New Zealand. When you partner with me you get{" "}
+          New Zealand, and the United States. When you partner with me you get{" "}
           <strong className="font-medium text-ink">one dedicated point of contact</strong>{" "}
           who takes your project from first idea to launch day, then sticks
           around to help you grow.
@@ -175,10 +178,22 @@ export default function Home() {
           , from PHP, jQuery, and WordPress through to React, Next.js, and
           Astro. Plenty of businesses run on a mix of both, and I enjoy meeting
           a codebase where it is: maintaining it, improving it, or migrating it
-          when the time comes. I also work{" "}
-          <strong className="font-medium text-ink">AI-first</strong>: agentic
-          coding and automation tools are part of my daily stack, so projects
-          move faster without cutting corners.
+          when the time comes.
+        </p>
+        <p>
+          I work <strong className="font-medium text-ink">AI-native</strong>.{" "}
+          <strong className="font-medium text-ink">Agentic AI</strong> is part
+          of my daily stack: I orchestrate Claude Code, Cursor, and GitHub
+          Copilot across real client work, and at Plato I build the{" "}
+          <strong className="font-medium text-ink">AI solutions</strong> behind
+          the web team, from Claude Code agent skills that automate maintenance
+          and site builds to{" "}
+          <strong className="font-medium text-ink">
+            Model Context Protocol (MCP)
+          </strong>{" "}
+          integrations that connect AI agents to Craft CMS, Storyblok, and
+          Statamic. Every AI-assisted change still gets human review, so
+          projects move faster without cutting corners.
         </p>
       </div>
 
@@ -186,7 +201,7 @@ export default function Home() {
       <Section
         id="services"
         title="How I can help"
-        lead="Build and care for websites and online stores that earn their keep. Every service is scoped around a business outcome."
+        lead="Build, automate, and care for websites, online stores, and AI-powered workflows that earn their keep. Every service is scoped around a business outcome."
       >
         <dl className="space-y-4">
           {services.map((service) => (
@@ -229,7 +244,7 @@ export default function Home() {
       <Section
         id="experience"
         title="Experience"
-        lead="Production work across time zones: Japan, France, and New Zealand."
+        lead="Production work across time zones: Japan, France, New Zealand, and the United States."
       >
         <div className="space-y-8">
           {roles.map((item) => (

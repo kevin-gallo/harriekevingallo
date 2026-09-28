@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const alt =
-  "Harrie Kevin Gallo — Full Stack Developer";
+  "Harrie Kevin Gallo | AI Engineer & AI-Native Full-Stack Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -46,8 +46,8 @@ export default function OpengraphImage() {
             Harrie Kevin Gallo
           </div>
           <div style={{ fontSize: 36, color: "#b5b5b5" }}>
-            Full stack developer — websites and online stores that turn
-            visitors into customers.
+            AI engineer and AI-native full-stack engineer. Websites, web apps,
+            and AI-powered workflows built with agentic AI.
           </div>
         </div>
 

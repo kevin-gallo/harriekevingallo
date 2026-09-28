@@ -6,7 +6,7 @@ import { experience } from "@/data/experience";
 export const metadata: Metadata = {
   title: "Experience",
   description:
-    "Harrie Kevin Gallo's work history: production roles across Japan, France, and New Zealand, plus education.",
+    "Harrie Kevin Gallo's work history: AI-native engineering and production roles across Japan, France, New Zealand, and the United States, plus education.",
 };
 
 export default function ExperiencePage() {
